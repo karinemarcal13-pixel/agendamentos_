@@ -1,76 +1,30 @@
-const lista =
-document.getElementById("lista");
+let agenda=JSON.parse(localStorage.getItem('agenda')||'[]');
 
-let agenda =
-JSON.parse(localStorage.getItem("agenda"))
-|| [];
-
-function salvarAgendamento(){
-
-const nome =
-document.getElementById("nome").value;
-
-const data =
-document.getElementById("data").value;
-
-const hora =
-document.getElementById("hora").value;
-
-const servico =
-document.getElementById("servico").value;
-
-if(!nome || !data || !hora){
-
-alert("Preencha todos os campos.");
-
-return;
-
+function salvar(){
+const item={
+nome:nome.value,
+telefone:telefone.value,
+data:data.value,
+hora:hora.value,
+servico:servico.value
+};
+agenda.push(item);
+localStorage.setItem('agenda',JSON.stringify(agenda));
+render();
 }
 
-agenda.push({
-
-nome,
-data,
-hora,
-servico
-
+function render(){
+lista.innerHTML='';
+agenda.forEach((a,i)=>{
+lista.innerHTML+=`
+<div class="item">
+<b>${a.nome}</b><br>
+📅 ${a.data} ⏰ ${a.hora}<br>
+✨ ${a.servico}<br>
+<a target="_blank" href="https://wa.me/55${a.telefone.replace(/\D/g,'')}?text=Olá ${encodeURIComponent(a.nome)}, confirmando seu horário no Karine Studio 🌸">WhatsApp</a>
+</div>`;
 });
-
-localStorage.setItem(
-"agenda",
-JSON.stringify(agenda)
-);
-
-mostrarAgenda();
-
-document.getElementById("nome").value = "";
-
+totalAgendamentos.textContent=agenda.length;
+totalClientes.textContent=new Set(agenda.map(x=>x.telefone)).size;
 }
-
-function mostrarAgenda(){
-
-lista.innerHTML = "";
-
-agenda.forEach(item=>{
-
-lista.innerHTML += `
-
-<div class="agendamento">
-
-<strong>${item.nome}</strong>
-
-<span>📅 ${item.data}</span>
-
-<span>⏰ ${item.hora}</span>
-
-<span>✨ ${item.servico}</span>
-
-</div>
-
-`;
-
-});
-
-}
-
-mostrarAgenda();
+render();

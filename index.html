@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -9,59 +11,278 @@
 <link rel="stylesheet" href="style.css">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 </head>
 
 <body>
 
-<div class="container">
+<div class="sidebar">
+
+<div class="logo">
+
+<h2>🌸 Karine Studio</h2>
+
+</div>
+
+<ul>
+
+<li class="active" onclick="mostrarTela('dashboard')">
+<i class="fa-solid fa-house"></i>
+Dashboard
+</li>
+
+<li onclick="mostrarTela('agenda')">
+<i class="fa-solid fa-calendar-days"></i>
+Agenda
+</li>
+
+<li onclick="mostrarTela('clientes')">
+<i class="fa-solid fa-users"></i>
+Clientes
+</li>
+
+<li onclick="mostrarTela('financeiro')">
+<i class="fa-solid fa-wallet"></i>
+Financeiro
+</li>
+
+<li onclick="mostrarTela('config')">
+<i class="fa-solid fa-gear"></i>
+Configurações
+</li>
+
+</ul>
+
+</div>
+
+<div class="main">
 
 <header>
 
-<h1>🌸 Karine Studio</h1>
+<h1>Bem-vinda, Karine 💖</h1>
 
-<p>Agenda de Atendimento</p>
+<p>Gerencie seus atendimentos com facilidade</p>
 
 </header>
 
+<!-- DASHBOARD -->
+
+<section id="dashboard" class="tela ativa">
+
+<div class="cards">
+
 <div class="card">
+
+<h3>Clientes</h3>
+
+<span id="totalClientes">
+0
+</span>
+
+</div>
+
+<div class="card">
+
+<h3>Agendamentos</h3>
+
+<span id="totalAgendamentos">
+0
+</span>
+
+</div>
+
+<div class="card">
+
+<h3>Faturamento</h3>
+
+<span id="faturamento">
+R$ 0
+</span>
+
+</div>
+
+</div>
+
+<div class="box">
+
+<h2>Próximos Horários</h2>
+
+<div id="proximosAgendamentos">
+
+</div>
+
+</div>
+
+</section>
+
+<!-- AGENDA -->
+
+<section id="agenda" class="tela">
+
+<div class="box">
 
 <h2>Novo Agendamento</h2>
 
-<input type="text" id="nome" placeholder="Nome da cliente">
+<input
+type="text"
+id="nome"
+placeholder="Nome da Cliente">
 
-<input type="date" id="data">
+<input
+type="text"
+id="telefone"
+placeholder="Telefone">
 
-<input type="time" id="hora">
+<input
+type="date"
+id="data">
+
+<input
+type="time"
+id="hora">
 
 <select id="servico">
 
-<option>Design de Sobrancelha</option>
-<option>Design com Henna</option>
-<option>Brow Lamination</option>
-<option>Cílios Brasileiro</option>
-<option>Cílios 3D Egípcio</option>
+<option>
+Design de Sobrancelha
+</option>
+
+<option>
+Design com Henna
+</option>
+
+<option>
+Brow Lamination
+</option>
+
+<option>
+Cílios Brasileiro
+</option>
+
+<option>
+Cílios 3D Egípcio
+</option>
 
 </select>
 
+<input
+type="number"
+id="valor"
+placeholder="Valor do Serviço">
+
 <button onclick="salvarAgendamento()">
+
 Salvar Agendamento
+
 </button>
 
 </div>
 
-<div class="card">
+<div class="box">
 
-<h2>Próximos Agendamentos</h2>
+<h2>Lista de Agendamentos</h2>
 
-<div id="lista"></div>
+<div id="listaAgenda">
 
 </div>
+
+</div>
+
+</section>
+
+<!-- CLIENTES -->
+
+<section id="clientes" class="tela">
+
+<div class="box">
+
+<h2>Cadastro de Clientes</h2>
+
+<input
+type="text"
+id="clienteNome"
+placeholder="Nome">
+
+<input
+type="text"
+id="clienteTelefone"
+placeholder="Telefone">
+
+<button onclick="salvarCliente()">
+
+Cadastrar Cliente
+
+</button>
+
+</div>
+
+<div class="box">
+
+<h2>Clientes Cadastrados</h2>
+
+<div id="listaClientes">
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FINANCEIRO -->
+
+<section id="financeiro" class="tela">
+
+<div class="box">
+
+<h2>Resumo Financeiro</h2>
+
+<div id="listaFinanceiro">
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CONFIGURAÇÕES -->
+
+<section id="config" class="tela">
+
+<div class="box">
+
+<h2>Configurações</h2>
+
+<p>
+
+Karine Studio v1.0
+
+</p>
+
+<p>
+
+Sistema Offline
+
+</p>
+
+<p>
+
+Dados salvos no navegador
+
+</p>
+
+</div>
+
+</section>
 
 </div>
 
 <script src="script.js"></script>
 
 </body>
+
 </html>

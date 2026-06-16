@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+<meta charset="UTF-8">
+<title>Agenda</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Agenda de Atendimento</h1>
+
+<div class="card">
+
+<input type="text" id="nome" placeholder="Nome da Cliente">
+
+<br><br>
+
+<input type="date" id="data">
+
+<br><br>
+
+<input type="time" id="hora">
+
+<br><br>
+
+<select id="servico">
+
+<option>Design de Sobrancelha</option>
+<option>Design com Henna</option>
+<option>Brow Lamination</option>
+<option>Cílios Brasileiro</option>
+<option>Cílios 3D</option>
+<option>Cílios Egipicio</option>
+
+</select>
+
+<br><br>
+
+<button onclick="salvarAgendamento()">
+Salvar
+</button>
+
+</div>
+
+<div class="card">
+
+<h2>Próximos Agendamentos</h2>
+
+<ul id="lista"></ul>
+
+</div>
+
+</div>
+
+<script src="js/agenda.js"></script>
+
+</body>
+</html>

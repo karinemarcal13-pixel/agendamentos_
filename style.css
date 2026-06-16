@@ -1,3 +1,7 @@
+/* ==========================
+   RESET
+========================== */
+
 *{
 margin:0;
 padding:0;
@@ -6,20 +10,20 @@ font-family:'Poppins',sans-serif;
 }
 
 body{
-
-background:
-linear-gradient(
-135deg,
-#ffe3ef,
-#fff8fb
-);
-
 display:flex;
 min-height:100vh;
-
+background:linear-gradient(
+135deg,
+#ffe5ef 0%,
+#fff8fb 50%,
+#ffffff 100%
+);
+color:#444;
 }
 
-/* MENU LATERAL */
+/* ==========================
+   MENU LATERAL
+========================== */
 
 .sidebar{
 
@@ -28,13 +32,22 @@ width:260px;
 background:
 linear-gradient(
 180deg,
-#e78bb1,
+#f2a8c6,
 #d86a98
 );
 
 color:white;
 
 padding:25px;
+
+position:fixed;
+
+left:0;
+top:0;
+
+height:100vh;
+
+overflow-y:auto;
 
 box-shadow:
 4px 0 20px rgba(0,0,0,.08);
@@ -44,13 +57,15 @@ box-shadow:
 .logo{
 
 text-align:center;
-margin-bottom:40px;
+
+margin-bottom:35px;
 
 }
 
 .logo h2{
 
-font-size:26px;
+font-size:24px;
+
 font-weight:700;
 
 }
@@ -63,42 +78,54 @@ list-style:none;
 
 .sidebar li{
 
-padding:15px;
-margin-bottom:10px;
+padding:14px;
 
 border-radius:14px;
 
+margin-bottom:10px;
+
 cursor:pointer;
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
 
 transition:.3s;
 
-display:flex;
-align-items:center;
-gap:10px;
+font-weight:500;
 
 }
 
 .sidebar li:hover{
 
-background:rgba(255,255,255,.15);
+background:
+rgba(255,255,255,.15);
 
 }
 
 .sidebar li.active{
 
 background:white;
+
 color:#d86a98;
 
 font-weight:600;
 
 }
 
-/* ÁREA PRINCIPAL */
+/* ==========================
+   CONTEÚDO
+========================== */
 
 .main{
 
-flex:1;
-padding:35px;
+margin-left:260px;
+
+width:100%;
+
+padding:30px;
 
 }
 
@@ -110,8 +137,11 @@ margin-bottom:25px;
 
 header h1{
 
-color:#d86a98;
 font-size:32px;
+
+color:#d86a98;
+
+margin-bottom:5px;
 
 }
 
@@ -121,7 +151,9 @@ color:#777;
 
 }
 
-/* CARDS */
+/* ==========================
+   CARDS DASHBOARD
+========================== */
 
 .cards{
 
@@ -145,7 +177,7 @@ padding:25px;
 border-radius:22px;
 
 box-shadow:
-0 10px 30px rgba(0,0,0,.08);
+0 10px 25px rgba(0,0,0,.08);
 
 transition:.3s;
 
@@ -159,18 +191,17 @@ transform:translateY(-4px);
 
 .card h3{
 
-color:#777;
 font-size:16px;
+
+color:#777;
+
+margin-bottom:10px;
 
 }
 
 .card span{
 
-display:block;
-
-margin-top:10px;
-
-font-size:35px;
+font-size:32px;
 
 font-weight:700;
 
@@ -178,7 +209,9 @@ color:#d86a98;
 
 }
 
-/* BOXES */
+/* ==========================
+   BOXES
+========================== */
 
 .box{
 
@@ -189,7 +222,7 @@ padding:25px;
 border-radius:22px;
 
 box-shadow:
-0 10px 30px rgba(0,0,0,.08);
+0 10px 25px rgba(0,0,0,.08);
 
 margin-bottom:20px;
 
@@ -198,11 +231,14 @@ margin-bottom:20px;
 .box h2{
 
 color:#d86a98;
+
 margin-bottom:20px;
 
 }
 
-/* FORMULÁRIOS */
+/* ==========================
+   FORMULÁRIOS
+========================== */
 
 input,
 select{
@@ -213,7 +249,7 @@ padding:14px;
 
 margin-bottom:12px;
 
-border:2px solid #f2d6e2;
+border:2px solid #f3d8e4;
 
 border-radius:12px;
 
@@ -232,26 +268,28 @@ border-color:#d86a98;
 
 }
 
+/* ==========================
+   BOTÕES
+========================== */
+
 button{
 
 width:100%;
 
-padding:15px;
+padding:14px;
 
 border:none;
 
-border-radius:14px;
+border-radius:12px;
 
 background:
 linear-gradient(
-90deg,
-#ff9cc1,
+135deg,
+#ffb4d0,
 #d86a98
 );
 
 color:white;
-
-font-size:16px;
 
 font-weight:600;
 
@@ -259,17 +297,22 @@ cursor:pointer;
 
 transition:.3s;
 
+margin-top:5px;
+
 }
 
 button:hover{
 
 transform:translateY(-2px);
 
-opacity:.95;
+box-shadow:
+0 8px 18px rgba(216,106,152,.30);
 
 }
 
-/* LISTAS */
+/* ==========================
+   AGENDAMENTOS
+========================== */
 
 .item{
 
@@ -289,19 +332,25 @@ margin-bottom:12px;
 
 display:block;
 
+font-size:17px;
+
 color:#d86a98;
 
-font-size:17px;
+margin-bottom:6px;
 
 }
 
 .item p{
 
-margin-top:5px;
+margin-bottom:5px;
 
 color:#555;
 
 }
+
+/* ==========================
+   BOTÃO WHATSAPP
+========================== */
 
 .item a{
 
@@ -309,21 +358,35 @@ display:inline-block;
 
 margin-top:10px;
 
-background:#25d366;
+padding:10px 15px;
+
+border-radius:10px;
+
+background:#25D366;
 
 color:white;
 
 text-decoration:none;
 
-padding:10px 15px;
-
-border-radius:10px;
-
 font-size:14px;
+
+font-weight:500;
+
+margin-right:8px;
+
+transition:.3s;
 
 }
 
-/* TELAS */
+.item a:hover{
+
+transform:scale(1.03);
+
+}
+
+/* ==========================
+   TELAS
+========================== */
 
 .tela{
 
@@ -335,9 +398,49 @@ display:none;
 
 display:block;
 
+animation:fade .3s ease;
+
 }
 
-/* RESPONSIVO */
+@keyframes fade{
+
+from{
+
+opacity:0;
+transform:translateY(10px);
+
+}
+
+to{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+}
+
+/* ==========================
+   SCROLL
+========================== */
+
+::-webkit-scrollbar{
+
+width:8px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:#d86a98;
+
+border-radius:20px;
+
+}
+
+/* ==========================
+   RESPONSIVO
+========================== */
 
 @media(max-width:900px){
 
@@ -349,11 +452,17 @@ flex-direction:column;
 
 .sidebar{
 
+position:relative;
+
 width:100%;
+
+height:auto;
 
 }
 
 .main{
+
+margin-left:0;
 
 padding:20px;
 
@@ -364,5 +473,27 @@ padding:20px;
 grid-template-columns:1fr;
 
 }
+
+header h1{
+
+font-size:26px;
+
+}
+
+}
+
+/* ==========================
+   EFEITO MÁRMORE
+========================== */
+
+.card,
+.box{
+
+background:
+linear-gradient(
+145deg,
+#ffffff,
+#fff8fb
+);
 
 }

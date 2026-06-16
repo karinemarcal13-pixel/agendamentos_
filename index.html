@@ -24,34 +24,33 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 <div class="sidebar">
 
 <div class="logo">
-
 <h2>🌸 Karine Studio</h2>
-
 </div>
 
 <ul>
 
-<li class="active" onclick="mostrarTela('dashboard')">
+<li class="active"
+onclick="mostrarTela('dashboard', this)">
 <i class="fa-solid fa-house"></i>
 Dashboard
 </li>
 
-<li onclick="mostrarTela('agenda')">
+<li onclick="mostrarTela('agenda', this)">
 <i class="fa-solid fa-calendar-days"></i>
 Agenda
 </li>
 
-<li onclick="mostrarTela('clientes')">
+<li onclick="mostrarTela('clientes', this)">
 <i class="fa-solid fa-users"></i>
 Clientes
 </li>
 
-<li onclick="mostrarTela('financeiro')">
+<li onclick="mostrarTela('financeiro', this)">
 <i class="fa-solid fa-wallet"></i>
 Financeiro
 </li>
 
-<li onclick="mostrarTela('config')">
+<li onclick="mostrarTela('config', this)">
 <i class="fa-solid fa-gear"></i>
 Configurações
 </li>
@@ -66,7 +65,9 @@ Configurações
 
 <h1>Bem-vinda, Karine 💖</h1>
 
-<p>Gerencie seus atendimentos com facilidade</p>
+<p>
+Gerencie seus atendimentos de cílios e sobrancelhas
+</p>
 
 </header>
 
@@ -77,33 +78,18 @@ Configurações
 <div class="cards">
 
 <div class="card">
-
 <h3>Clientes</h3>
-
-<span id="totalClientes">
-0
-</span>
-
+<span id="totalClientes">0</span>
 </div>
 
 <div class="card">
-
 <h3>Agendamentos</h3>
-
-<span id="totalAgendamentos">
-0
-</span>
-
+<span id="totalAgendamentos">0</span>
 </div>
 
 <div class="card">
-
 <h3>Faturamento</h3>
-
-<span id="faturamento">
-R$ 0
-</span>
-
+<span id="faturamento">R$ 0,00</span>
 </div>
 
 </div>
@@ -113,6 +99,8 @@ R$ 0
 <h2>Próximos Horários</h2>
 
 <div id="proximosAgendamentos">
+
+<p>Nenhum horário cadastrado.</p>
 
 </div>
 
@@ -131,7 +119,7 @@ R$ 0
 <input
 type="text"
 id="nome"
-placeholder="Nome da Cliente">
+placeholder="Nome da cliente">
 
 <input
 type="text"
@@ -148,46 +136,32 @@ id="hora">
 
 <select id="servico">
 
-<option>
-Design de Sobrancelha
-</option>
-
-<option>
-Design com Henna
-</option>
-
-<option>
-Brow Lamination
-</option>
-
-<option>
-Cílios Brasileiro
-</option>
-
-<option>
-Cílios 3D Egípcio
-</option>
+<option>Design de Sobrancelha</option>
+<option>Design com Henna</option>
+<option>Brow Lamination</option>
+<option>Cílios Brasileiro</option>
+<option>Cílios 3D Egípcio</option>
 
 </select>
 
 <input
 type="number"
 id="valor"
-placeholder="Valor do Serviço">
+placeholder="Valor do serviço">
 
 <button onclick="salvarAgendamento()">
-
 Salvar Agendamento
-
 </button>
 
 </div>
 
 <div class="box">
 
-<h2>Lista de Agendamentos</h2>
+<h2>Agendamentos</h2>
 
 <div id="listaAgenda">
+
+<p>Nenhum agendamento cadastrado.</p>
 
 </div>
 
@@ -201,12 +175,12 @@ Salvar Agendamento
 
 <div class="box">
 
-<h2>Cadastro de Clientes</h2>
+<h2>Cadastrar Cliente</h2>
 
 <input
 type="text"
 id="clienteNome"
-placeholder="Nome">
+placeholder="Nome da cliente">
 
 <input
 type="text"
@@ -227,6 +201,8 @@ Cadastrar Cliente
 
 <div id="listaClientes">
 
+<p>Nenhum cliente cadastrado.</p>
+
 </div>
 
 </div>
@@ -239,9 +215,11 @@ Cadastrar Cliente
 
 <div class="box">
 
-<h2>Resumo Financeiro</h2>
+<h2>Financeiro</h2>
 
 <div id="listaFinanceiro">
+
+<p>Nenhum atendimento finalizado.</p>
 
 </div>
 
@@ -249,7 +227,7 @@ Cadastrar Cliente
 
 </section>
 
-<!-- CONFIGURAÇÕES -->
+<!-- CONFIG -->
 
 <section id="config" class="tela">
 
@@ -257,23 +235,10 @@ Cadastrar Cliente
 
 <h2>Configurações</h2>
 
-<p>
-
-Karine Studio v1.0
-
-</p>
-
-<p>
-
-Sistema Offline
-
-</p>
-
-<p>
-
-Dados salvos no navegador
-
-</p>
+<p>🌸 Karine Studio v1.0</p>
+<p>💾 Dados salvos no navegador</p>
+<p>📱 Integração WhatsApp</p>
+<p>💖 Sistema Offline</p>
 
 </div>
 

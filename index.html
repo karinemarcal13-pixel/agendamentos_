@@ -1,33 +1,67 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Karine Studio</title>
 
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
 
 <div class="container">
 
+<header>
+
 <h1>🌸 Karine Studio</h1>
 
-<div class="menu">
+<p>Agenda de Atendimento</p>
 
-<a href="agendamentos.html">
-<button>Agenda</button>
-</a>
+</header>
 
-<a href="clientes.html">
-<button>Clientes</button>
-</a>
+<div class="card">
+
+<h2>Novo Agendamento</h2>
+
+<input type="text" id="nome" placeholder="Nome da cliente">
+
+<input type="date" id="data">
+
+<input type="time" id="hora">
+
+<select id="servico">
+
+<option>Design de Sobrancelha</option>
+<option>Design com Henna</option>
+<option>Brow Lamination</option>
+<option>Cílios Brasileiro</option>
+<option>Cílios 3D Egípcio</option>
+
+</select>
+
+<button onclick="salvarAgendamento()">
+Salvar Agendamento
+</button>
+
+</div>
+
+<div class="card">
+
+<h2>Próximos Agendamentos</h2>
+
+<div id="lista"></div>
 
 </div>
 
 </div>
+
+<script src="script.js"></script>
 
 </body>
 </html>
